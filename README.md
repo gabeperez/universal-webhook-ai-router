@@ -6,11 +6,25 @@ Transform webhooks from any service (Cal.com, GitHub, Stripe, Shopify, etc.) int
 
 This CloudFlare Worker receives webhook events from Cal.com and forwards relevant booking information to your AI at poke.com.
 
-## 🚀 Deployment Status
+## 🚀 Quick Start
 
-✅ **Worker URL**: `https://cal-webhook.perez-jg22.workers.dev`  
-✅ **Secrets Configured**: `AI_API_KEY`, `CAL_WEBHOOK_SECRET`  
-✅ **Health Check**: `/health` endpoint available
+### Option 1: One-Click Deploy (Recommended)
+1. Click the deploy button above
+2. Connect your Cloudflare account
+3. Set your `AI_API_KEY` environment variable
+4. Your webhook URL: `https://your-worker-name.your-subdomain.workers.dev`
+
+### Option 2: Manual Deploy
+```bash
+git clone https://github.com/gabeperez/universal-webhook-ai-router
+cd universal-webhook-ai-router
+npm install
+wrangler login
+wrangler secret put AI_API_KEY
+wrangler deploy
+```
+
+📋 **Next Steps**: See [CONFIG.md](CONFIG.md) for post-deployment configuration.
 
 ## 📋 Features
 

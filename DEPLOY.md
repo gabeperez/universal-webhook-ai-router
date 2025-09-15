@@ -100,12 +100,12 @@ npx wrangler secret put STRIPE_WEBHOOK_SECRET
 
 ### 1. Health Check
 ```bash
-curl https://your-worker.workers.dev/health
+curl https://your-worker-name.your-subdomain.workers.dev/health
 ```
 
 ### 2. Test Webhook
 ```bash
-curl -X POST https://your-worker.workers.dev/ \
+curl -X POST https://your-worker-name.your-subdomain.workers.dev/ \
   -H "Content-Type: application/json" \
   -H "User-Agent: GitHub-Hookshot/test" \
   -d '{"action":"push","repository":{"name":"test-repo"}}'
@@ -118,15 +118,15 @@ npx wrangler tail
 
 ## Adding Webhooks
 
-Point your service webhooks to: `https://your-worker.workers.dev`
+Point your service webhooks to: `https://your-worker-name.your-subdomain.workers.dev`
 
 ### Supported Services
-- ✅ Cal.com: `https://your-worker.workers.dev`
-- ✅ GitHub: `https://your-worker.workers.dev`  
-- ✅ Stripe: `https://your-worker.workers.dev`
-- ✅ Shopify: `https://your-worker.workers.dev`
-- ✅ Slack: `https://your-worker.workers.dev`
-- ✅ Any service: `https://your-worker.workers.dev`
+- ✅ Cal.com: `https://your-worker-name.your-subdomain.workers.dev`
+- ✅ GitHub: `https://your-worker-name.your-subdomain.workers.dev`  
+- ✅ Stripe: `https://your-worker-name.your-subdomain.workers.dev`
+- ✅ Shopify: `https://your-worker-name.your-subdomain.workers.dev`
+- ✅ Slack: `https://your-worker-name.your-subdomain.workers.dev`
+- ✅ Any service: `https://your-worker-name.your-subdomain.workers.dev`
 
 The router automatically detects the service type and formats appropriate messages.
 

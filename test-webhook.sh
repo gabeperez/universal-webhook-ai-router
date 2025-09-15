@@ -9,9 +9,11 @@ WEBHOOK_SECRET=${2}
 if [[ "$MODE" == "local" ]]; then
     URL="http://127.0.0.1:8787"
 elif [[ "$MODE" == "prod" ]]; then
-    URL="https://cal-webhook.perez-jg22.workers.dev"
+    URL="https://your-worker-name.your-subdomain.workers.dev"
+    echo "💡 Replace 'your-worker-name.your-subdomain.workers.dev' with your actual worker URL"
 else
     echo "Usage: $0 [local|prod] [webhook_secret]"
+    echo "Example: $0 prod your-webhook-secret"
     exit 1
 fi
 
