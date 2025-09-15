@@ -42,6 +42,11 @@ function detectWebhookService(userAgent, headers, body) {
     return { name: 'zapier', type: 'automation' };
   }
   
+  // Location sharing apps
+  if (userAgent.includes('Shortcuts') || headers['x-location-share']) {
+    return { name: 'location', type: 'location' };
+  }
+  
   // Default/unknown
   return { name: 'unknown', type: 'generic' };
 }
@@ -75,6 +80,8 @@ async function processWebhook(service, body) {
         return processShopifyWebhook(data);
       case 'slack':
         return processSlackWebhook(data);
+      case 'location':
+        return processLocationWebhook(data);
       default:
         return processGenericWebhook(service, data);
     }
@@ -159,6 +166,34 @@ function processShopifyWebhook(data) {
 function processSlackWebhook(data) {
   return {
     message: `💬 Slack event: ${data.event?.type || 'unknown'}`,
+    shouldProcess: true,
+    rawData: data
+  };
+}
+
+function processLocationWebhook(data) {
+  const { latitude, longitude, location, accuracy, timestamp } = data;
+  
+  // Format location data for AI
+  let message = `📍 Location shared`;
+  
+  if (location) {
+    message = `📍 Location: ${location}`;
+  } else if (latitude && longitude) {
+    message = `📍 Location: ${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
+  }
+  
+  if (accuracy) {
+    message += ` (±${Math.round(accuracy)}m)`;
+  }
+  
+  if (timestamp) {
+    const time = new Date(timestamp).toLocaleTimeString();
+    message += ` at ${time}`;
+  }
+  
+  return {
+    message,
     shouldProcess: true,
     rawData: data
   };
