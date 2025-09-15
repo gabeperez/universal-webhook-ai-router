@@ -24,7 +24,7 @@
     "cloudflare",
     "workers"
   ],
-  "author": "Gabe Perez <gabe@webhookrouter.dev>",
+  "author": "Universal Webhook Router Contributors",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabeperez/universal-webhook-ai-router/issues"

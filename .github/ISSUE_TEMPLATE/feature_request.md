@@ -3,7 +3,7 @@ name: 🚀 Feature Request
 about: Suggest a new webhook service or enhancement
 title: '[FEATURE] '
 labels: enhancement
-assignees: gabeperez
+assignees: ''
 ---
 
 ## 🎯 Feature Description
