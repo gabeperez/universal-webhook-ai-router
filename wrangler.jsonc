@@ -1,0 +1,11 @@
+{
+  "name": "cal-webhook",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-09-14",
+  "compatibility_flags": [
+    "global_fetch_strictly_public"
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

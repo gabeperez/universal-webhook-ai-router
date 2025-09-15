@@ -1,0 +1,42 @@
+{
+  "name": "universal-webhook-ai-router",
+  "version": "1.0.0",
+  "description": "Transform webhooks from any service into natural language notifications for your AI assistant",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabeperez/universal-webhook-ai-router.git"
+  },
+  "keywords": [
+    "webhook",
+    "ai",
+    "automation",
+    "cal.com",
+    "github",
+    "stripe",
+    "shopify",
+    "cloudflare",
+    "workers"
+  ],
+  "author": "Gabe Perez <gabe@webhookrouter.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabeperez/universal-webhook-ai-router/issues"
+  },
+  "homepage": "https://github.com/gabeperez/universal-webhook-ai-router#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
